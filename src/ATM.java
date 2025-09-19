@@ -4,6 +4,8 @@ class ATM {
     public ATM(double initialBalance) {
         this.accountBalance = initialBalance;
     }
+
+
     public void deposit(int amount) {
         if (amount > 0) {
             accountBalance += amount;
@@ -16,7 +18,6 @@ class ATM {
         System.out.println();
     }
 
-    // Method 2: Deposit using check (String checkNumber, int amount)
     public void deposit(String checkNumber, int amount) {
         if (amount > 0 && checkNumber != null && !checkNumber.trim().isEmpty()) {
             accountBalance += amount;
@@ -30,7 +31,7 @@ class ATM {
         System.out.println();
     }
 
-    // Method 3: Deposit using mobile transfer (String phoneNumber, double amount)
+
     public void deposit(String phoneNumber, double amount) {
         if (amount > 0 && phoneNumber != null && !phoneNumber.trim().isEmpty()) {
             accountBalance += amount;
@@ -44,7 +45,7 @@ class ATM {
         System.out.println();
     }
 
-    // Method to check current balance
+
     public void checkBalance() {
         System.out.println("Current account balance: $" + String.format("%.2f", accountBalance));
         System.out.println();
