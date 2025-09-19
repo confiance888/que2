@@ -1,15 +1,74 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+    public class ATMMain {
+        public static void main(String[] args) {
+            // Create ATM object with initial balance
+            ATM myATM = new ATM(1000.00);
+
+            System.out.println("=== Welcome to ATM Service ===\n");
+
+            // Check initial balance
+            System.out.println("Initial Balance:");
+            myATM.checkBalance();
+
+            // Demonstrate all three deposit methods
+
+            // 1. Cash deposit
+            System.out.println("=== Cash Deposit ===");
+            myATM.deposit(500);
+
+            // 2. Check deposit
+            System.out.println("=== Check Deposit ===");
+            myATM.deposit("CHK12345", 750);
+
+            // 3. Mobile transfer deposit
+            System.out.println("=== Mobile Transfer Deposit ===");
+            myATM.deposit("+1-555-123-4567", 250.75);
+
+            // Final balance check
+            System.out.println("=== Final Balance ===");
+            myATM.checkBalance();
+
+            // Test error cases
+            System.out.println("=== Testing Error Cases ===");
+            myATM.deposit(-100); // Invalid cash amount
+            myATM.deposit("", 200); // Invalid check number
+            myATM.deposit("", -50.0); // Invalid mobile transfer
+        }
+    } {
+
+            // Create ATM object with initial balance
+            ATM myATM = new ATM(1000.00);
+
+            System.out.println("=== Welcome to ATM Service ===\n");
+
+            // Check initial balance
+            System.out.println("Initial Balance:");
+            myATM.checkBalance();
+
+            // Demonstrate all three deposit methods
+
+            // 1. Cash deposit
+            System.out.println("=== Cash Deposit ===");
+            myATM.deposit(500);
+
+            // 2. Check deposit
+            System.out.println("=== Check Deposit ===");
+            myATM.deposit("CHK12345", 750);
+
+            // 3. Mobile transfer deposit
+            System.out.println("=== Mobile Transfer Deposit ===");
+            myATM.deposit("+1-555-123-4567", 250.75);
+
+            // Final balance check
+            System.out.println("=== Final Balance ===");
+            myATM.checkBalance();
+
+            // Test error cases
+            System.out.println("=== Testing Error Cases ===");
+            myATM.deposit(-100); // Invalid cash amount
+            myATM.deposit("", 200); // Invalid check number
+            myATM.deposit("", -50.0); // Invalid mobile transfer
         }
     }
-}
+
